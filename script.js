@@ -205,3 +205,14 @@ document.addEventListener('DOMContentLoaded', addHoverEffects);
 window.addEventListener('load', function() {
   document.body.classList.add('loaded');
 });
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
+
+  const url = `https://wa.me/919657344130?text=Hi, I'm ${name}. I need help with: ${service}. ${message}`;
+  window.open(url, '_blank');
+});
